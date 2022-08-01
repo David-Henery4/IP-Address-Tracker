@@ -1,0 +1,39 @@
+.display{
+    width: 90%;
+    // height: 20rem;
+    background-color: $fontColorWhite;
+    border-radius: 15px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black; // temp
+    &-item{
+        h4{
+            font-size: .8rem;
+            color: $darkGrey;
+            font-weight: 700;
+            letter-spacing: .1rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: 1.8rem;
+            font-weight: $rubik700;
+        }
+    }
+    &-ip{
+        
+    }
+    &-location{
+
+    }
+    &-timezone{
+
+    }
+    &-isp{
+
+    }
+}

@@ -1,12 +1,12 @@
+import { Header, Map } from "./components";
 
 
 function App() {
   return (
-    <div>
-      <h1>
-        ip address tracker
-      </h1>
-    </div>
+    <main className="overall">
+      <Header/>
+      <Map/>
+    </main>
   );
 }
 
