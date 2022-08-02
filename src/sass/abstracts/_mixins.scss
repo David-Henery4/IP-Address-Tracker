@@ -1,0 +1,21 @@
+
+@mixin respon ($breakpoint) {
+    @if $breakpoint == tab {
+        // 46.25em = 740px
+        // 45.93em = 735px
+        //44.68em = 715px
+        @media (min-width: 44.68em){ 
+            @content
+        }
+    };
+    @if $breakpoint == lapsml {
+        @media (min-width: 63.75em) { // 1020px
+            @content
+        }
+    };
+    @if $breakpoint == laplg {
+        @media (min-width: 78.12em) { // 1250px
+            @content
+        }
+    };
+};

@@ -8,4 +8,11 @@
 
 html{
     font-size: 62.5%; // default 10px = 1rem
+    // 68.7% = 11px
+    @include respon (tab){
+        font-size: 75%; // 12px = 1rem
+    }
+    @include respon (laplg){
+        font-size: 87.5%; // 14px = 1rem
+    }
 }

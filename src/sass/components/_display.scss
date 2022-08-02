@@ -1,17 +1,22 @@
 .display{
     width: 90%;
-    // height: 20rem;
     background-color: $fontColorWhite;
     border-radius: 15px;
-    padding: 2.5rem 2rem;
-    display: flex;
-    gap: 2rem;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
     text-align: center;
+    @include respon (lapsml){
+        text-align: left;
+    }
     border: 2px solid black; // temp
     &-item{
+        padding: 1rem;
+        @include respon (lapsml){
+            &:not(:last-child){
+                border-right: 1px solid $darkGrey;
+            }
+        }
         h4{
             font-size: .8rem;
             color: $darkGrey;
@@ -21,19 +26,7 @@
         }
         p{
             font-size: 1.8rem;
-            font-weight: $rubik700;
+            font-weight: $rubik500;
         }
-    }
-    &-ip{
-        
-    }
-    &-location{
-
-    }
-    &-timezone{
-
-    }
-    &-isp{
-
     }
 }

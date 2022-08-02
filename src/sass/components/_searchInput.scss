@@ -1,22 +1,29 @@
 .input{
     height: 100%;
     &-container{
-        // padding: 1.2rem;
-        height: 5rem;
+        height: 4rem;
         width: 90%;
+        max-width: 460px;
         overflow: hidden;
         border-radius: 15px;
         display: flex;
+        @include respon (laplg){
+            max-width: 54rem;
+        }
     }
     &__search{
         width: 75%;
         padding: .5rem 1rem;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        outline: none;
     }
     &__button{
         width: 25%;
         border: none;
         background-color: black;
+        &:hover{
+            cursor: pointer;
+        }
         img{
             height: auto;
             width: 1rem;
