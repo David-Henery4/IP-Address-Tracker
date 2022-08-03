@@ -5,10 +5,13 @@ import { TileLayer } from "react-leaflet/TileLayer";
 import { useMap } from "react-leaflet/hooks";
 import { Marker, Popup } from "react-leaflet";
 import SetInitialView from './SetInitialView';
+import { useSelector } from 'react-redux/es/exports';
 
 const Map = () => {
   const [long, setLong] = useState(-0.09);
   const [lat, setLat] = useState(51.505);
+  // const {ip} = useSelector((store) => store.ip)
+  // console.log(ip)
   // const position = [51.505, -0.09];
   //
   useEffect(() => {

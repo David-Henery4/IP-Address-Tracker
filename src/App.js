@@ -1,4 +1,5 @@
 import { Header, Map } from "./components";
+import "./data/fetchData"
 
 
 function App() {
