@@ -8,41 +8,29 @@ import SetInitialView from './SetInitialView';
 import { useSelector } from 'react-redux/es/exports';
 
 const Map = () => {
-  const [long, setLong] = useState(-0.09);
-  const [lat, setLat] = useState(51.505);
-  // const {ip} = useSelector((store) => store.ip)
-  // console.log(ip)
-  // const position = [51.505, -0.09];
-  //
-  useEffect(() => {
-    const userLocal = navigator.geolocation;
-    userLocal.getCurrentPosition((pos) => {
-      const lat = pos.coords.latitude;
-      const long = pos.coords.longitude;
-      setLat(lat)
-      setLong(long)
-    });
-  }, [])
+  const {lat,long} = useSelector((store) => {
+    return store.ip
+  })
   //
   return (
-      <MapContainer
-        id="map"
-        className="map"
-        center={[lat, long]}
-        zoom={13}
-        scrollWheelZoom={false}
-      >
-        <SetInitialView lat={lat} long={long}/>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-        <Marker position={[lat,long]}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
-      </MapContainer>
+    <MapContainer
+      id="map"
+      className="map"
+      center={[lat, long] || [51.505, -0.09]}
+      zoom={13}
+      scrollWheelZoom={false}
+    >
+      <SetInitialView lat={lat || 51.505} long={long || -0.09} />
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={[lat, long] || [51.505, -0.09]}>
+        <Popup>
+          A pretty CSS3 popup. <br /> Easily customizable.
+        </Popup>
+      </Marker>
+    </MapContainer>
   );
 }
 
