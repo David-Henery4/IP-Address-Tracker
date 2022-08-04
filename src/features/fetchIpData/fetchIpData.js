@@ -1,8 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { baseFetch } from "../../data/fetchData";
-
-// will be hidden in ENV
-const APIKEY = "apiKey=at_rJkaaX33BUvyWh1k4ruwfkFP3NR6K";
+import { handleInitialIp, handleSearchIp } from "./handleIpData";
 
 const initialState = {
     ipAddress: 0,
@@ -16,27 +13,9 @@ const initialState = {
     isLoading: false,
 }
 
-export const getInitialIp = createAsyncThunk("ip/getInitialIp", async () => {
-    try {
-        const res = await baseFetch(`country,city?${APIKEY}`)
-        const data = res.data
-        // console.log(data)
-        return data
-    } catch (error) {
-        console.error(error.response)
-    }
-})
+export const getInitialIp = createAsyncThunk("ip/getInitialIp", handleInitialIp)
 
-export const getIpFromSearch = createAsyncThunk("ip/getIpFromSearch", async (searchQuery) => {
-    try {
-        const res = await baseFetch(
-            `country,city?${APIKEY}&domain=${searchQuery}&ipAddress=${searchQuery}`);
-        const data = res.data
-        return data
-    } catch (error) {
-        console.error(error.response)
-    }
-})
+export const getIpFromSearch = createAsyncThunk("ip/getIpFromSearch", handleSearchIp);
 
 const IpSlice = createSlice({
     name:"ip",
@@ -48,7 +27,6 @@ const IpSlice = createSlice({
     },
     extraReducers: {
         [getInitialIp.fulfilled]: (state, {payload}) => {
-            console.log(payload)
             state.ipAddress = payload.ip
             state.isp = payload.isp
             state.lat = payload.location.lat

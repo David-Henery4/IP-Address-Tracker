@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
-// import "leaflet/dist/leaflet.css";
+import React from 'react'
 import { MapContainer } from "react-leaflet/MapContainer";
 import { TileLayer } from "react-leaflet/TileLayer";
-import { useMap } from "react-leaflet/hooks";
 import { Marker, Popup } from "react-leaflet";
 import SetInitialView from './SetInitialView';
 import { useSelector } from 'react-redux/es/exports';
@@ -27,7 +25,7 @@ const Map = () => {
       />
       <Marker position={[lat, long] || [51.505, -0.09]}>
         <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
+          IP address location!
         </Popup>
       </Marker>
     </MapContainer>
