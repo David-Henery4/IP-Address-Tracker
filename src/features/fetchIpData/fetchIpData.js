@@ -34,12 +34,13 @@ const IpSlice = createSlice({
             state.timezone = payload.location.timezone
             state.domain = payload.as.domain
             state.location = payload.location
+            state.isLoading = false
         },
         [getInitialIp.pending]: (state) => {
-
+            state.isLoading = true;
         },
         [getInitialIp.rejected]: (state) => {
-
+            state.isLoading = false;
         },
         //
         [getIpFromSearch.fulfilled]: (state, {payload}) => {
@@ -50,12 +51,13 @@ const IpSlice = createSlice({
             state.timezone = payload.location.timezone;
             state.domain = payload.as.domain;
             state.location = payload.location;
+            state.isLoading = false;
         },
         [getIpFromSearch.pending]: (state) => {
-
+            state.isLoading = true;
         },
         [getIpFromSearch.rejected]: (state) => {
-
+            state.isLoading = false;
         },
     }
 })

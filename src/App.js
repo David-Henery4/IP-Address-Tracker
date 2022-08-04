@@ -1,5 +1,5 @@
 import { Header, Map } from "./components";
-import "./data/fetchData"
+// import "./data/fetchData"
 
 
 function App() {

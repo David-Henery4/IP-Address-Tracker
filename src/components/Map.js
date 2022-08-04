@@ -6,7 +6,9 @@ import SetInitialView from "./SetInitialView";
 import { useSelector } from "react-redux/es/exports";
 import { Icon } from "leaflet";
 import locationMarker from "../images/icon-location.svg";
+import LoadingSpinner from "./LoadingSpinner";
 // import "../images/icon-location.svg"
+
 
 const customIcon = new Icon({
   iconUrl: locationMarker,
@@ -14,7 +16,7 @@ const customIcon = new Icon({
 });
 
 const Map = () => {
-  const { lat, long } = useSelector((store) => {
+  const { lat, long, isLoading } = useSelector((store) => {
     return store.ip;
   });
   //
@@ -26,6 +28,7 @@ const Map = () => {
       zoom={13}
       scrollWheelZoom={false}
     >
+      {isLoading && <LoadingSpinner/>}
       <SetInitialView lat={lat || 51.505} long={long || -0.09} />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
