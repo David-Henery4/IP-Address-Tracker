@@ -10,6 +10,8 @@ import LoadingSpinner from "./LoadingSpinner";
 // import "../images/icon-location.svg"
 
 
+
+
 const customIcon = new Icon({
   iconUrl: locationMarker,
   iconSize: [25, 30],
@@ -28,7 +30,7 @@ const Map = () => {
       zoom={13}
       scrollWheelZoom={false}
     >
-      {isLoading && <LoadingSpinner/>}
+      {isLoading && <LoadingSpinner />}
       <SetInitialView lat={lat || 51.505} long={long || -0.09} />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

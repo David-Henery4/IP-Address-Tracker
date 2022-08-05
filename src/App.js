@@ -5,8 +5,8 @@ import { Header, Map } from "./components";
 function App() {
   return (
     <main className="overall">
-      <Header/>
-      <Map/>
+      <Header />
+      <Map />
     </main>
   );
 }

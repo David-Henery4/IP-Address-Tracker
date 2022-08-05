@@ -3,9 +3,11 @@ import Yes from "../images/icon-arrow.svg"
 import { upDateSearchQuery } from '../features/fetchIpData/fetchIpData'
 import { useDispatch } from 'react-redux'
 import { getInitialIp, getIpFromSearch } from '../features/fetchIpData/fetchIpData'
+import { useSelector } from 'react-redux/es/hooks/useSelector'
 
 const Input = () => {
   const [searchValue, setSearchValue] = useState("")
+  const ip = useSelector((store) => store.ip)
   const dispatch = useDispatch()
   //
   const handleSearchInput = (e) => {
@@ -15,7 +17,9 @@ const Input = () => {
   }
   //
   useEffect(() => {
-    dispatch(getInitialIp()) // to stop calling for now
+    if (ip){
+      // dispatch(getInitialIp()) // to stop calling for now
+    }
   }, [])
   //
   return (
