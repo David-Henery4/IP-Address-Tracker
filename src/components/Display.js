@@ -24,7 +24,6 @@ const Display = () => {
 
       <div className="display-timezone display-item">
         <h4>TIMEZONE</h4>
-        {/* Have to work out BST/GMT ETC */}
         <p>{isLoading ? "...Loading" : `UTC${timezone}`}</p>
       </div>
 

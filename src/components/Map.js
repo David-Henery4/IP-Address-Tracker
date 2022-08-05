@@ -7,10 +7,6 @@ import { useSelector } from "react-redux/es/exports";
 import { Icon } from "leaflet";
 import locationMarker from "../images/icon-location.svg";
 import LoadingSpinner from "./LoadingSpinner";
-// import "../images/icon-location.svg"
-
-
-
 
 const customIcon = new Icon({
   iconUrl: locationMarker,

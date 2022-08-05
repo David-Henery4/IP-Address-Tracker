@@ -1,5 +1,4 @@
 import { baseFetch } from "../../data/fetchData";
-import { toast } from "react-toastify";
 const KEY = process.env.REACT_APP_IP_API_KEY;
 
 export const handleInitialIp = async (_, { rejectWithValue }) => {

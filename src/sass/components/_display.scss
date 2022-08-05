@@ -11,6 +11,9 @@
     @include respon (lapsml){
         text-align: left;
     }
+    @include respon (laplg){
+        max-width: 105rem;
+    }
     &-item{
         padding: 1rem;
         @include respon (lapsml){

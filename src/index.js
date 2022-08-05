@@ -5,7 +5,7 @@ import { store } from './data/store';
 import { Provider } from 'react-redux';
 import App from './App';
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 
 
 
