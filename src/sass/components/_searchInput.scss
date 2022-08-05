@@ -23,6 +23,7 @@
         background-color: black;
         &:hover{
             cursor: pointer;
+            background-color: $veryDarkGrey;
         }
         img{
             height: auto;
