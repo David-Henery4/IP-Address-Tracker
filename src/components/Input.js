@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Yes from "../images/icon-arrow.svg"
+import arrow from "../images/icon-arrow.svg"
 import { upDateSearchQuery } from '../features/fetchIpData/fetchIpData'
 import { useDispatch } from 'react-redux'
 import { getInitialIp, getIpFromSearch } from '../features/fetchIpData/fetchIpData'
@@ -18,7 +18,7 @@ const Input = () => {
   //
   useEffect(() => {
     if (ip) {
-      // dispatch(getInitialIp())
+      dispatch(getInitialIp())
     }
     // eslint-disable-next-line
   }, [])
@@ -29,7 +29,7 @@ const Input = () => {
         return setSearchValue(e.target.value)
       }} value={searchValue}/>
       <button className="input__button input" onClick={handleSearchInput}>
-        <img src={Yes} alt="" />
+        <img src={arrow} alt="" />
       </button>
     </form>
   );
