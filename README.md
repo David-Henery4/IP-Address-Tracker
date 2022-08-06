@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Github Version : [Add solution URL here](https://your-solution-url.com)
+- Github Version/Frontend mentor??? : [Add solution URL here](https://your-solution-url.com)
 - Live Version : [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
@@ -58,47 +58,44 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+One of the main things i learned was how using redux toolkit is good for state management. Which i think using the slice and the store overall is a better, more orginised way of controlling the state. In comparison to different ways like using useContext and useReducer.
 
-To see how you can add code snippets, see below:
+I feel the benefits of the slice and store would really start to show on bigger projects than this because having a slice for each feature and a store for that feature allows us to keep track of a projects state alot easier by breaking it down into their own individual parts. Rather than keeping the overall state in one place that would grow over time and become harder to manage. (Especially when using alot of types/actions and dispatches).
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
+E.G - Here we handle the data from the API directly in the extraReducer action in the slice and send it straight to the state. 
+```js 
+extraReducers: {
+    [getInitialIp.fulfilled]: (state, { payload }) => {
+      state.ipAddress = payload.ip;
+      state.isp = payload.isp;
+      state.lat = payload.location.lat;
+      state.long = payload.location.lng;
+      state.timezone = payload.location.timezone;
+      state.domain = payload.as.domain;
+      state.location = payload.location;
+      state.isLoading = false;
+    },
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+We then can make the state data, for the ip/slice feature, available thoughout the application though the store.
+``` js 
+export const store = configureStore({
+  reducer: {
+    ip: IpReducer,
+  },
+});
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+In this project i used leaflet.js for only the second time and i found exploring their documentation really interesting and showed me a lot of different ways a map library can be used. Which has inspired me to, in the future, build my own map based project.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+I also did more research around maps and how they can be used and customised which lead me to discover sites like [Maptiler](https://www.maptiler.com). Where you can use pre-made or custom maps for your application. These inspired me further and i will definitely be using these type of resources when i create my own map based application in the future. 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [David Henery](https://www.djhwebdevelopment.com)
+- Frontend Mentor - [@David-Henery4](https://www.frontendmentor.io/profile/David-Henery4)
+- Linkedin - [David Henery](https://www.linkedin.com/in/david-henery-725458241)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
