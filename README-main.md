@@ -54,8 +54,7 @@ Users should be able to:
 - [Leaflet.js](https://leafletjs.com) - A JS library for interactive maps.
 - [IP Geolocation API](https://geo.ipify.org) - API that allows you to search for IP addresses accurately.
 - [Axios](https://axios-http.com) - Promise based HTTP client library that helps deal with APIs in the browser.
-- [React-Toastify](https://fkhadra.github.io/react-toastify/introduction) - Small library that adds notification messages. 
-
+- [React-Toastify](https://fkhadra.github.io/react-toastify/introduction) - Small library that adds notification messages.
 
 ### What I learned
 
@@ -66,15 +65,17 @@ To see how you can add code snippets, see below:
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```
+
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
 ```js
 const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  console.log("🎉");
+};
 ```
 
 If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
@@ -101,5 +102,3 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-
