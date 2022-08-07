@@ -18,7 +18,7 @@ const Input = () => {
   //
   useEffect(() => {
     if (ip) {
-      dispatch(getInitialIp())
+      // dispatch(getInitialIp())
     }
     // eslint-disable-next-line
   }, [])
